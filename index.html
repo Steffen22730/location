@@ -23,30 +23,20 @@
     }
     html, body { height: 100%; background: var(--bg); font-family: 'DM Sans', sans-serif; color: var(--text); font-size: 16px; }
     .app { min-height: 100vh; display: flex; flex-direction: column; }
-
-    /* HEADER */
     .header { background: var(--green-dark); padding: env(safe-area-inset-top, 44px) 1.25rem 1.25rem; color: white; }
-    .header-inner { padding-top: 0.5rem; display: flex; align-items: flex-end; justify-content: space-between; }
+    .header-inner { padding-top: 0.5rem; }
     .header-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #9FE1CB; margin-bottom: 4px; }
     .header h1 { font-family: 'DM Serif Display', serif; font-size: 26px; font-weight: 400; color: white; }
     .header-sub { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 4px; }
-
-    /* NAV */
     .nav { display: flex; background: var(--green-dark); border-bottom: 1px solid rgba(255,255,255,0.1); }
     .nav-tab { flex: 1; padding: 12px 0 10px; font-size: 11px; font-weight: 500; color: rgba(255,255,255,0.5); text-align: center; cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.2s; }
     .nav-tab.active { color: white; border-bottom-color: #5DCAA5; }
-
-    /* CONTENT */
     .content { flex: 1; padding: 1.25rem; padding-bottom: calc(env(safe-area-inset-bottom, 16px) + 1.25rem); }
     .screen { display: none; }
     .screen.active { display: block; }
-
-    /* CARD */
     .card { background: var(--white); border-radius: var(--radius); border: 0.5px solid var(--border); padding: 1.1rem 1.25rem; margin-bottom: 1rem; box-shadow: var(--shadow); }
     .card-title { font-size: 11px; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase; color: var(--text-3); margin-bottom: 14px; display: flex; align-items: center; gap: 6px; }
     .card-title svg { width: 14px; height: 14px; stroke: var(--text-3); fill: none; stroke-width: 2; }
-
-    /* FIELDS */
     .field { margin-bottom: 14px; }
     .field:last-child { margin-bottom: 0; }
     .field label { display: block; font-size: 13px; color: var(--text-2); margin-bottom: 6px; }
@@ -56,8 +46,6 @@
     .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
     .err-msg { font-size: 12px; color: var(--red); margin-top: 4px; display: none; }
     .err-msg.show { display: block; }
-
-    /* TOGGLE */
     .option-row { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; }
     .option-row + .option-row { border-top: 0.5px solid var(--border); }
     .option-label { font-size: 15px; color: var(--text); }
@@ -69,52 +57,37 @@
     .toggle-track::before { content: ''; position: absolute; width: 20px; height: 20px; left: 3px; top: 3px; background: white; border-radius: 50%; transition: transform 0.2s; box-shadow: 0 1px 4px rgba(0,0,0,0.2); }
     .toggle input:checked + .toggle-track { background: var(--green-light); }
     .toggle input:checked + .toggle-track::before { transform: translateX(20px); }
-
-    /* SUMMARY */
     .summary { background: var(--green-pale); border-radius: var(--radius-sm); padding: 1rem 1.1rem; }
     .summary-line { display: flex; justify-content: space-between; font-size: 13px; color: var(--green-dark); padding: 3px 0; }
     .summary-total { display: flex; justify-content: space-between; font-size: 17px; font-weight: 500; color: var(--green-dark); border-top: 1px solid rgba(15,110,86,0.2); margin-top: 8px; padding-top: 10px; }
-
-    /* BUTTONS */
     .btn { display: block; width: 100%; padding: 15px; background: var(--green); color: white; border: none; border-radius: var(--radius-sm); font-size: 16px; font-weight: 500; font-family: 'DM Sans', sans-serif; cursor: pointer; text-align: center; transition: background 0.15s, transform 0.1s; }
     .btn:active { background: var(--green-dark); transform: scale(0.98); }
     .btn-secondary { background: var(--bg); color: var(--green); border: 1px solid var(--green-light); margin-top: 0.75rem; }
-    .btn-secondary:active { background: var(--green-pale); }
     .btn-danger { background: var(--red-pale); color: var(--red); border: 1px solid rgba(192,57,43,0.2); margin-top: 0.75rem; }
-    .btn-danger:active { background: #f5c6c2; }
-    .btn-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 0.75rem; }
-    .btn-sm { padding: 10px; font-size: 14px; }
-
-    /* BADGES */
     .season-badge { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 500; padding: 4px 10px; border-radius: 20px; margin-bottom: 10px; }
     .season-badge.haute { background: var(--amber-pale); color: var(--amber); }
     .season-badge.basse { background: var(--green-pale); color: var(--green-dark); }
     .resa-badge { display: inline-block; font-size: 11px; background: var(--green-pale); color: var(--green-dark); border-radius: 20px; padding: 2px 8px; margin-top: 4px; margin-right: 4px; }
     .resa-badge.haute { background: var(--amber-pale); color: var(--amber); }
-
-    /* LISTE */
+    .resa-badge.perso { background: #e8eaf6; color: #3949ab; }
     .resa-empty { text-align: center; padding: 3rem 1rem; color: var(--text-3); font-size: 14px; }
     .resa-empty-icon { font-size: 36px; margin-bottom: 12px; }
-    .resa-item { background: var(--white); border-radius: var(--radius); border: 0.5px solid var(--border); padding: 1rem 1.25rem; margin-bottom: 0.75rem; box-shadow: var(--shadow); display: flex; align-items: flex-start; gap: 12px; cursor: pointer; transition: box-shadow 0.15s; }
-    .resa-item:active { box-shadow: none; }
+    .resa-item { background: var(--white); border-radius: var(--radius); border: 0.5px solid var(--border); padding: 1rem 1.25rem; margin-bottom: 0.75rem; box-shadow: var(--shadow); display: flex; align-items: flex-start; gap: 12px; cursor: pointer; }
     .resa-avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--green-pale); color: var(--green-dark); display: flex; align-items: center; justify-content: center; font-weight: 500; font-size: 14px; flex-shrink: 0; }
     .resa-info { flex: 1; min-width: 0; }
     .resa-name { font-size: 15px; font-weight: 500; color: var(--text); }
     .resa-dates { font-size: 12px; color: var(--text-3); margin-top: 3px; }
     .resa-price { font-size: 15px; font-weight: 500; color: var(--green); white-space: nowrap; }
     .resa-chevron { font-size: 18px; color: var(--text-3); align-self: center; }
-
-    /* SUCCESS */
     .success-screen { display: none; text-align: center; padding: 2rem 1rem; }
     .success-screen.show { display: block; }
     .success-icon-wrap { width: 72px; height: 72px; border-radius: 50%; background: var(--green-pale); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; }
     .success-icon-wrap svg { width: 36px; height: 36px; stroke: var(--green); fill: none; stroke-width: 2; }
     .success-screen h2 { font-family: 'DM Serif Display', serif; font-size: 22px; font-weight: 400; margin-bottom: 8px; }
     .success-screen p { font-size: 14px; color: var(--text-2); line-height: 1.6; margin-bottom: 1.5rem; }
-
     select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 36px; }
 
-    /* MODAL DÉTAIL / MODIFICATION */
+    /* MODAL */
     .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 100; display: none; align-items: flex-end; justify-content: center; }
     .modal-overlay.show { display: flex; }
     .modal { background: var(--bg); border-radius: 24px 24px 0 0; width: 100%; max-height: 92vh; overflow-y: auto; padding: 0 1.25rem calc(env(safe-area-inset-bottom,16px) + 1.25rem); }
@@ -122,31 +95,31 @@
     .modal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
     .modal-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; }
     .modal-close { width: 32px; height: 32px; border-radius: 50%; background: var(--border); border: none; font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--text-2); }
-    .modal-tabs { display: flex; gap: 0; background: var(--border); border-radius: 10px; padding: 3px; margin-bottom: 1rem; }
+    .modal-tabs { display: flex; background: var(--border); border-radius: 10px; padding: 3px; margin-bottom: 1rem; }
     .modal-tab { flex: 1; padding: 8px; font-size: 13px; font-weight: 500; text-align: center; border-radius: 8px; cursor: pointer; color: var(--text-3); transition: all 0.2s; }
     .modal-tab.active { background: var(--white); color: var(--text); box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
     .modal-pane { display: none; }
     .modal-pane.active { display: block; }
 
     /* DÉTAIL */
+    .detail-price-big { font-family: 'DM Serif Display', serif; font-size: 32px; color: var(--green); text-align: center; padding: 1rem 0 0.25rem; }
+    .detail-price-sub { font-size: 12px; color: var(--text-3); text-align: center; margin-bottom: 1rem; }
     .detail-row { display: flex; justify-content: space-between; align-items: baseline; padding: 10px 0; border-bottom: 0.5px solid var(--border); font-size: 14px; }
     .detail-row:last-child { border-bottom: none; }
     .detail-label { color: var(--text-3); font-size: 13px; }
     .detail-value { font-weight: 500; color: var(--text); text-align: right; }
-    .detail-price-big { font-family: 'DM Serif Display', serif; font-size: 28px; color: var(--green); text-align: center; padding: 1rem 0 0.5rem; }
-    .detail-price-sub { font-size: 12px; color: var(--text-3); text-align: center; margin-bottom: 1rem; }
 
-    /* PRIX PERSO */
-    .prix-perso-wrap { background: var(--white); border-radius: var(--radius-sm); border: 1px solid var(--border-2); padding: 1rem; margin-top: 1rem; }
-    .prix-perso-label { font-size: 13px; color: var(--text-2); margin-bottom: 8px; }
-    .prix-perso-input { display: flex; align-items: center; gap: 8px; }
-    .prix-perso-input input { flex: 1; padding: 10px 14px; border: 1px solid var(--border-2); border-radius: var(--radius-sm); font-size: 16px; font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--bg); outline: none; }
-    .prix-perso-input input:focus { border-color: var(--green-light); background: white; }
-    .prix-perso-input span { font-size: 15px; color: var(--text-3); }
-    .prix-perso-note { font-size: 12px; color: var(--text-3); margin-top: 6px; }
+    /* PRIX JOURNALIER PERSO */
+    .prix-perso-box { background: var(--white); border-radius: var(--radius-sm); border: 1px solid var(--border-2); padding: 1rem 1.1rem; margin-top: 0.75rem; }
+    .prix-perso-title { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 4px; }
+    .prix-perso-desc { font-size: 12px; color: var(--text-3); margin-bottom: 10px; }
+    .prix-perso-row { display: flex; align-items: center; gap: 8px; }
+    .prix-perso-row input { flex: 1; padding: 10px 14px; border: 1px solid var(--border-2); border-radius: var(--radius-sm); font-size: 16px; font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--bg); outline: none; }
+    .prix-perso-row input:focus { border-color: var(--green-light); background: white; }
+    .prix-perso-row span { font-size: 14px; color: var(--text-3); white-space: nowrap; }
+    .prix-perso-result { margin-top: 10px; padding: 10px 12px; background: var(--green-pale); border-radius: 8px; font-size: 13px; color: var(--green-dark); display: flex; justify-content: space-between; }
 
     /* TARIFS */
-    .tarif-section { margin-bottom: 1rem; }
     .tarif-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
     .tarif-row label { font-size: 13px; color: var(--text-2); flex: 1; }
     .tarif-input-wrap { display: flex; align-items: center; gap: 6px; }
@@ -155,7 +128,7 @@
     .tarif-input-wrap span { font-size: 14px; color: var(--text-3); }
     .tarif-sub { font-size: 12px; color: var(--text-3); margin-bottom: 12px; }
     .months-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 8px; }
-    .month-chip { padding: 7px 4px; border-radius: 8px; font-size: 12px; text-align: center; border: 1px solid var(--border-2); cursor: pointer; transition: all 0.15s; background: var(--bg); color: var(--text-2); }
+    .month-chip { padding: 7px 4px; border-radius: 8px; font-size: 12px; text-align: center; border: 1px solid var(--border-2); cursor: pointer; background: var(--bg); color: var(--text-2); transition: all 0.15s; }
     .month-chip.haute { background: var(--amber-pale); color: var(--amber); border-color: var(--amber); font-weight: 500; }
     .month-chip.basse { background: var(--green-pale); color: var(--green-dark); border-color: var(--green-light); }
 
@@ -176,9 +149,8 @@
     .cal-cell.res-start .cal-bg { background: linear-gradient(to right, transparent 50%, rgba(29,158,117,0.18) 50%); }
     .cal-cell.res-end .cal-bg { background: linear-gradient(to left, transparent 50%, rgba(29,158,117,0.18) 50%); }
     .cal-cell.res-start .cal-num, .cal-cell.res-end .cal-num, .cal-cell.res-mid .cal-num { background: var(--green-light); color: white; font-weight: 500; }
-    .cal-cell.res-start.res-end .cal-bg { background: none; }
     .cal-cell.haute-saison { background: rgba(186,117,23,0.06); }
-    .cal-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 1rem; font-size: 12px; color: var(--text-2); }
+    .cal-legend { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 1rem; font-size: 12px; color: var(--text-2); }
     .legend-item { display: flex; align-items: center; gap: 5px; }
     .legend-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
     .cal-no-resa { text-align: center; padding: 1.5rem; color: var(--text-3); font-size: 13px; }
@@ -189,11 +161,7 @@
     .cal-resa-date { font-size: 12px; color: var(--text-3); margin-top: 2px; }
     .cal-resa-price { font-size: 13px; font-weight: 500; color: var(--green); }
 
-    /* TOAST */
-    .toast { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); background: var(--green-dark); color: white; padding: 10px 20px; border-radius: 20px; font-size: 13px; opacity: 0; transition: opacity 0.3s; pointer-events: none; z-index: 999; white-space: nowrap; }
-    .toast.show { opacity: 1; }
-
-    /* CONFIRM DIALOG */
+    /* CONFIRM */
     .confirm-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 200; display: none; align-items: center; justify-content: center; padding: 1.5rem; }
     .confirm-overlay.show { display: flex; }
     .confirm-box { background: var(--white); border-radius: var(--radius); padding: 1.5rem; width: 100%; max-width: 320px; text-align: center; }
@@ -203,6 +171,9 @@
     .confirm-btns button { padding: 12px; border-radius: var(--radius-sm); border: none; font-size: 14px; font-weight: 500; font-family: 'DM Sans', sans-serif; cursor: pointer; }
     .confirm-cancel { background: var(--bg); color: var(--text-2); }
     .confirm-ok { background: var(--red); color: white; }
+
+    .toast { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); background: var(--green-dark); color: white; padding: 10px 20px; border-radius: 20px; font-size: 13px; opacity: 0; transition: opacity 0.3s; pointer-events: none; z-index: 999; white-space: nowrap; }
+    .toast.show { opacity: 1; }
   </style>
 </head>
 <body>
@@ -224,7 +195,7 @@
   </div>
   <div class="content">
 
-    <!-- FORMULAIRE NOUVELLE RÉSERVATION -->
+    <!-- FORMULAIRE -->
     <div class="screen active" id="screen-form">
       <div id="formWrap">
         <div class="card">
@@ -237,7 +208,7 @@
           <div class="field"><label for="tel">Téléphone</label><input type="tel" id="tel" placeholder="06 12 34 56 78" autocomplete="tel"></div>
         </div>
         <div class="card">
-          <div class="card-title"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Période de séjour</div>
+          <div class="card-title"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Période</div>
           <div id="season-indicator"></div>
           <div class="field-row">
             <div class="field"><label for="arrivee">Arrivée</label><input type="date" id="arrivee"><div class="err-msg" id="err-arrivee">Requise</div></div>
@@ -250,7 +221,7 @@
         <div class="card">
           <div class="card-title"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>Options</div>
           <div class="option-row">
-            <div><div class="option-label">Nettoyage fin de séjour</div><div class="option-desc">Remise en état par nos soins</div><div class="option-price" id="nettoyage-price">+ 80 €</div></div>
+            <div><div class="option-label">Nettoyage fin de séjour</div><div class="option-desc">Remise en état par nos soins</div><div class="option-price" id="nettoyage-price"></div></div>
             <label class="toggle"><input type="checkbox" id="nettoyage" onchange="calculer()"><div class="toggle-track"></div></label>
           </div>
         </div>
@@ -294,7 +265,6 @@
       <div class="cal-legend">
         <div class="legend-item"><div class="legend-dot" style="background:var(--green-light)"></div><span>Réservé</span></div>
         <div class="legend-item"><div class="legend-dot" style="background:var(--amber);opacity:0.5"></div><span>Haute saison</span></div>
-        <div class="legend-item"><div class="legend-dot" style="background:var(--border-2)"></div><span>Disponible</span></div>
       </div>
       <div id="cal-month-resas"></div>
     </div>
@@ -303,39 +273,33 @@
     <div class="screen" id="screen-tarifs">
       <div class="card">
         <div class="card-title"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Tarifs par nuit</div>
-        <div class="tarif-section">
-          <div style="margin-bottom:6px"><span class="season-badge haute">☀️ Haute saison</span></div>
-          <div class="tarif-sub">Juillet, Août, Septembre (modifiable ci-dessous)</div>
-          <div class="tarif-row"><label>Tarif / nuit</label><div class="tarif-input-wrap"><input type="number" id="tarif-haute" min="0" placeholder="120"><span>€</span></div></div>
-        </div>
-        <div style="border-top:0.5px solid var(--border);margin:4px 0 16px"></div>
-        <div class="tarif-section">
-          <div style="margin-bottom:6px"><span class="season-badge basse">🍂 Basse saison</span></div>
-          <div class="tarif-sub">Reste de l'année</div>
-          <div class="tarif-row"><label>Tarif / nuit</label><div class="tarif-input-wrap"><input type="number" id="tarif-basse" min="0" placeholder="80"><span>€</span></div></div>
-        </div>
-        <div style="border-top:0.5px solid var(--border);margin:4px 0 16px"></div>
-        <div class="tarif-section">
-          <div style="margin-bottom:6px"><span class="season-badge basse">🧹 Nettoyage</span></div>
-          <div class="tarif-row"><label>Forfait nettoyage</label><div class="tarif-input-wrap"><input type="number" id="tarif-nettoyage" min="0" placeholder="80"><span>€</span></div></div>
-        </div>
-        <button class="btn" onclick="saveTarifs()">Enregistrer les tarifs</button>
+        <div style="margin-bottom:6px"><span class="season-badge haute">☀️ Haute saison</span></div>
+        <div class="tarif-sub">Juillet, Août, Septembre (modifiable ci-dessous)</div>
+        <div class="tarif-row"><label>Tarif / nuit</label><div class="tarif-input-wrap"><input type="number" id="tarif-haute" min="0"><span>€</span></div></div>
+        <div style="border-top:0.5px solid var(--border);margin:8px 0 16px"></div>
+        <div style="margin-bottom:6px"><span class="season-badge basse">🍂 Basse saison</span></div>
+        <div class="tarif-sub">Reste de l'année</div>
+        <div class="tarif-row"><label>Tarif / nuit</label><div class="tarif-input-wrap"><input type="number" id="tarif-basse" min="0"><span>€</span></div></div>
+        <div style="border-top:0.5px solid var(--border);margin:8px 0 16px"></div>
+        <div style="margin-bottom:6px"><span class="season-badge basse">🧹 Nettoyage</span></div>
+        <div class="tarif-row"><label>Forfait nettoyage</label><div class="tarif-input-wrap"><input type="number" id="tarif-nettoyage" min="0"><span>€</span></div></div>
+        <button class="btn" style="margin-top:8px" onclick="saveTarifs()">Enregistrer les tarifs</button>
       </div>
       <div class="card">
         <div class="card-title"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Mois de haute saison</div>
-        <div style="font-size:12px;color:var(--text-3);margin-bottom:12px">Appuie sur un mois pour basculer sa saison</div>
+        <div style="font-size:12px;color:var(--text-3);margin-bottom:12px">Appuie sur un mois pour changer sa saison</div>
         <div class="months-grid" id="months-grid"></div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- MODAL DÉTAIL / MODIFICATION -->
+<!-- MODAL -->
 <div class="modal-overlay" id="modal-overlay" onclick="closeModalIfOutside(event)">
   <div class="modal" id="modal">
     <div class="modal-handle"></div>
     <div class="modal-header">
-      <div class="modal-title" id="modal-title">Réservation</div>
+      <div class="modal-title" id="modal-title"></div>
       <button class="modal-close" onclick="closeModal()">✕</button>
     </div>
     <div class="modal-tabs">
@@ -347,9 +311,7 @@
     <div class="modal-pane active" id="pane-detail">
       <div class="detail-price-big" id="detail-prix"></div>
       <div class="detail-price-sub" id="detail-prix-sub"></div>
-      <div class="card">
-        <div id="detail-rows"></div>
-      </div>
+      <div class="card"><div id="detail-rows"></div></div>
       <button class="btn btn-danger" onclick="confirmerSuppression()">Supprimer la réservation</button>
     </div>
 
@@ -381,30 +343,41 @@
           <label class="toggle"><input type="checkbox" id="m-nettoyage" onchange="recalcModif()"><div class="toggle-track"></div></label>
         </div>
       </div>
+
+      <!-- PRIX JOURNALIER PERSONNALISÉ -->
       <div class="card">
         <div class="card-title"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Prix</div>
-        <div class="summary" id="m-summary">
-          <div class="summary-line"><span>Tarif calculé</span><span id="m-s-tarif">—</span></div>
+        <div class="summary">
+          <div class="summary-line"><span>Tarif saison</span><span id="m-s-tarif-saison">—</span></div>
+          <div class="summary-line"><span>Durée</span><span id="m-s-nuits">—</span></div>
           <div class="summary-line"><span>Nettoyage</span><span id="m-s-net">—</span></div>
           <div class="summary-total"><span>Total calculé</span><span id="m-s-total">—</span></div>
         </div>
-        <div class="prix-perso-wrap">
-          <div class="prix-perso-label">💡 Prix personnalisé (optionnel)</div>
-          <div class="prix-perso-input"><input type="number" id="m-prix-perso" placeholder="Laisser vide = prix calculé"><span>€</span></div>
-          <div class="prix-perso-note">Remplace le total calculé si renseigné</div>
+
+        <div class="prix-perso-box">
+          <div class="prix-perso-title">💡 Tarif journalier personnalisé</div>
+          <div class="prix-perso-desc">Remplace le tarif de saison pour cette réservation uniquement. Laisser vide = tarif de saison.</div>
+          <div class="prix-perso-row">
+            <input type="number" id="m-tarif-perso" placeholder="Ex : 95" min="0" oninput="recalcModif()">
+            <span>€ / nuit</span>
+          </div>
+          <div class="prix-perso-result" id="m-perso-result" style="display:none">
+            <span>Nouveau total</span><span id="m-perso-total">—</span>
+          </div>
         </div>
       </div>
+
       <button class="btn" onclick="sauvegarderModif()">Enregistrer les modifications</button>
       <button class="btn btn-danger" onclick="confirmerSuppression()">Supprimer la réservation</button>
     </div>
   </div>
 </div>
 
-<!-- CONFIRM SUPPRESSION -->
+<!-- CONFIRM -->
 <div class="confirm-overlay" id="confirm-overlay">
   <div class="confirm-box">
     <h3>Supprimer ?</h3>
-    <p id="confirm-msg">Cette réservation sera définitivement supprimée.</p>
+    <p id="confirm-msg"></p>
     <div class="confirm-btns">
       <button class="confirm-cancel" onclick="closeConfirm()">Annuler</button>
       <button class="confirm-ok" onclick="supprimerResa()">Supprimer</button>
@@ -431,6 +404,7 @@
   document.getElementById('tarif-haute').value = tarifs.haute;
   document.getElementById('tarif-basse').value = tarifs.basse;
   document.getElementById('tarif-nettoyage').value = tarifs.nettoyage;
+  document.getElementById('nettoyage-price').textContent = '+ ' + tarifs.nettoyage + ' €';
 
   document.getElementById('arrivee').min = todayStr;
   document.getElementById('depart').min = todayStr;
@@ -444,14 +418,19 @@
   function pad(n) { return n < 10 ? '0' + n : '' + n; }
   function isHaute(dateStr) { return hautesMois.includes(new Date(dateStr + 'T12:00:00').getMonth()); }
 
-  function calculerTotal(arrivee, depart) {
+  function calculerTotal(arrivee, depart, tarifPersoNuit) {
     let total = 0, details = { haute: 0, basse: 0 };
     const d = new Date(arrivee + 'T12:00:00');
     const fin = new Date(depart + 'T12:00:00');
     while (d < fin) {
       const ds = d.toISOString().split('T')[0];
-      if (isHaute(ds)) { total += tarifs.haute; details.haute++; }
-      else { total += tarifs.basse; details.basse++; }
+      const h = isHaute(ds);
+      if (tarifPersoNuit !== null && tarifPersoNuit !== undefined) {
+        total += tarifPersoNuit;
+      } else {
+        total += h ? tarifs.haute : tarifs.basse;
+      }
+      if (h) details.haute++; else details.basse++;
       d.setDate(d.getDate() + 1);
     }
     return { total, details };
@@ -464,13 +443,17 @@
     document.getElementById('nettoyage-price').textContent = '+ ' + tarifs.nettoyage + ' €';
     if (a && d && d > a) {
       const nuits = Math.round((new Date(d) - new Date(a)) / 86400000);
-      const { total, details } = calculerTotal(a, d);
+      const { total, details } = calculerTotal(a, d, null);
       const totalFinal = total + (net ? tarifs.nettoyage : 0);
-      let badge = details.haute > 0 && details.basse > 0 ? '<span class="season-badge haute">☀️ Séjour mixte</span>' :
-        details.haute > 0 ? '<span class="season-badge haute">☀️ Haute saison — ' + tarifs.haute + ' €/nuit</span>' :
-        '<span class="season-badge basse">🍂 Basse saison — ' + tarifs.basse + ' €/nuit</span>';
+      let badge = details.haute > 0 && details.basse > 0
+        ? '<span class="season-badge haute">☀️ Séjour mixte</span>'
+        : details.haute > 0
+          ? '<span class="season-badge haute">☀️ Haute saison — ' + tarifs.haute + ' €/nuit</span>'
+          : '<span class="season-badge basse">🍂 Basse saison — ' + tarifs.basse + ' €/nuit</span>';
       document.getElementById('season-indicator').innerHTML = badge;
-      let tarifLabel = details.haute > 0 && details.basse > 0 ? tarifs.basse + ' – ' + tarifs.haute + ' €/nuit' : (details.haute > 0 ? tarifs.haute : tarifs.basse) + ' €/nuit';
+      let tarifLabel = details.haute > 0 && details.basse > 0
+        ? tarifs.basse + ' – ' + tarifs.haute + ' €/nuit'
+        : (details.haute > 0 ? tarifs.haute : tarifs.basse) + ' €/nuit';
       document.getElementById('s-nuit').textContent = tarifLabel;
       document.getElementById('s-nuits').textContent = nuits + ' nuit' + (nuits > 1 ? 's' : '');
       document.getElementById('s-nettoyage').textContent = net ? tarifs.nettoyage + ' €' : 'Non inclus';
@@ -506,14 +489,20 @@
     err('depart', !depart || depart <= arrivee); if (!depart || depart <= arrivee) ok = false;
     if (!ok) return;
     const nuits = Math.round((new Date(depart) - new Date(arrivee)) / 86400000);
-    const { total, details } = calculerTotal(arrivee, depart);
+    const { total, details } = calculerTotal(arrivee, depart, null);
     const totalFinal = total + (nettoyage ? tarifs.nettoyage : 0);
-    const resa = { id: Date.now(), prenom, nom, email, tel: document.getElementById('tel').value.trim(), arrivee, depart, nuits, nettoyage, personnes, total: totalFinal, totalPerso: null, haute: details.haute > 0, date: new Date().toISOString() };
+    const resa = {
+      id: Date.now(), prenom, nom, email,
+      tel: document.getElementById('tel').value.trim(),
+      arrivee, depart, nuits, nettoyage, personnes,
+      total: totalFinal, tarifPersoNuit: null,
+      haute: details.haute > 0, date: new Date().toISOString()
+    };
     reservations.unshift(resa);
     save();
     const fmt = d => new Date(d + 'T12:00:00').toLocaleDateString('fr-FR', { day: 'numeric', month: 'long' });
     document.getElementById('success-title').textContent = 'Merci ' + prenom + ' !';
-    document.getElementById('success-detail').textContent = 'Séjour du ' + fmt(arrivee) + ' au ' + fmt(depart) + ' · ' + nuits + ' nuit' + (nuits > 1 ? 's' : '') + ' · ' + personnes + ' pers. · ' + totalFinal + ' €';
+    document.getElementById('success-detail').textContent = 'Séjour du ' + fmt(arrivee) + ' au ' + fmt(depart) + ' · ' + nuits + ' nuit' + (nuits > 1 ? 's' : '') + ' · ' + totalFinal + ' €';
     document.getElementById('formWrap').style.display = 'none';
     document.getElementById('successWrap').classList.add('show');
   }
@@ -533,37 +522,36 @@
 
   function save() { localStorage.setItem('reservations', JSON.stringify(reservations)); }
 
-  // LISTE
+  function getPrix(r) { return r.total; }
+
   function renderList() {
     const el = document.getElementById('resa-list-content');
     if (!reservations.length) { el.innerHTML = '<div class="resa-empty"><div class="resa-empty-icon">🏖️</div><div>Aucune réservation enregistrée</div></div>'; return; }
     const fmt = d => new Date(d + 'T12:00:00').toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', year: 'numeric' });
     el.innerHTML = reservations.map((r, i) => {
       const ini = (r.prenom[0] + r.nom[0]).toUpperCase();
-      const prix = r.totalPerso !== null && r.totalPerso !== undefined ? r.totalPerso : r.total;
-      return '<div class="resa-item" onclick="openModal(' + i + ')"><div class="resa-avatar">' + ini + '</div><div class="resa-info"><div class="resa-name">' + r.prenom + ' ' + r.nom + '</div><div class="resa-dates">' + fmt(r.arrivee) + ' → ' + fmt(r.depart) + ' · ' + r.nuits + ' nuit' + (r.nuits > 1 ? 's' : '') + ' · ' + r.personnes + ' pers.</div>' + (r.haute ? '<span class="resa-badge haute">☀️ Haute saison</span>' : '<span class="resa-badge">🍂 Basse saison</span>') + (r.nettoyage ? '<span class="resa-badge">Nettoyage inclus</span>' : '') + '</div><div style="display:flex;align-items:center;gap:8px"><div class="resa-price">' + prix + ' €</div><div class="resa-chevron">›</div></div></div>';
+      const tarifLabel = r.tarifPersoNuit ? r.tarifPersoNuit + ' €/nuit ✏️' : (r.haute ? tarifs.haute : tarifs.basse) + ' €/nuit';
+      return '<div class="resa-item" onclick="openModal(' + i + ')"><div class="resa-avatar">' + ini + '</div><div class="resa-info"><div class="resa-name">' + r.prenom + ' ' + r.nom + '</div><div class="resa-dates">' + fmt(r.arrivee) + ' → ' + fmt(r.depart) + ' · ' + r.nuits + ' nuit' + (r.nuits > 1 ? 's' : '') + ' · ' + r.personnes + ' pers.</div>' + (r.haute ? '<span class="resa-badge haute">☀️ Haute</span>' : '<span class="resa-badge">🍂 Basse</span>') + (r.tarifPersoNuit ? '<span class="resa-badge perso">Tarif perso</span>' : '') + (r.nettoyage ? '<span class="resa-badge">Nettoyage</span>' : '') + '</div><div style="display:flex;align-items:center;gap:8px"><div class="resa-price">' + r.total + ' €</div><div class="resa-chevron">›</div></div></div>';
     }).join('');
   }
 
-  // MODAL
   function openModal(idx) {
     currentResaIdx = idx;
     const r = reservations[idx];
-    const prix = r.totalPerso !== null && r.totalPerso !== undefined ? r.totalPerso : r.total;
     const fmt = d => new Date(d + 'T12:00:00').toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
-    const fmtShort = d => new Date(d + 'T12:00:00').toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' });
-
     document.getElementById('modal-title').textContent = r.prenom + ' ' + r.nom;
-    document.getElementById('detail-prix').textContent = prix + ' €';
-    document.getElementById('detail-prix-sub').textContent = r.totalPerso !== null && r.totalPerso !== undefined ? 'Prix personnalisé' : 'Prix calculé';
+    document.getElementById('detail-prix').textContent = r.total + ' €';
+
+    const tarifUtilise = r.tarifPersoNuit ? r.tarifPersoNuit + ' €/nuit (personnalisé)' : (r.haute ? '☀️ Haute saison' : '🍂 Basse saison') + ' · ' + (r.haute ? tarifs.haute : tarifs.basse) + ' €/nuit';
+    document.getElementById('detail-prix-sub').textContent = tarifUtilise;
 
     document.getElementById('detail-rows').innerHTML = [
       ['Arrivée', fmt(r.arrivee)],
       ['Départ', fmt(r.depart)],
       ['Durée', r.nuits + ' nuit' + (r.nuits > 1 ? 's' : '')],
-      ['Personnes', r.personnes],
-      ['Saison', r.haute ? '☀️ Haute saison' : '🍂 Basse saison'],
-      ['Nettoyage', r.nettoyage ? 'Inclus' : 'Non inclus'],
+      ['Personnes', r.personnes + ' personne' + (r.personnes > 1 ? 's' : '')],
+      ['Tarif / nuit', r.tarifPersoNuit ? r.tarifPersoNuit + ' € ✏️' : (r.haute ? tarifs.haute : tarifs.basse) + ' €'],
+      ['Nettoyage', r.nettoyage ? tarifs.nettoyage + ' €' : 'Non inclus'],
       ['Email', r.email],
       ['Téléphone', r.tel || '—'],
     ].map(([l, v]) => '<div class="detail-row"><span class="detail-label">' + l + '</span><span class="detail-value">' + v + '</span></div>').join('');
@@ -578,10 +566,9 @@
     document.getElementById('m-personnes').value = r.personnes;
     document.getElementById('m-nettoyage').checked = r.nettoyage;
     document.getElementById('m-nettoyage-price').textContent = '+ ' + tarifs.nettoyage + ' €';
-    document.getElementById('m-prix-perso').value = (r.totalPerso !== null && r.totalPerso !== undefined) ? r.totalPerso : '';
+    document.getElementById('m-tarif-perso').value = r.tarifPersoNuit || '';
     recalcModif();
 
-    // Reset tabs
     switchModalTab('detail', document.querySelector('.modal-tab'));
     document.getElementById('modal-overlay').classList.add('show');
     document.body.style.overflow = 'hidden';
@@ -594,9 +581,7 @@
     if (document.getElementById('screen-cal').classList.contains('active')) renderCalendar();
   }
 
-  function closeModalIfOutside(e) {
-    if (e.target === document.getElementById('modal-overlay')) closeModal();
-  }
+  function closeModalIfOutside(e) { if (e.target === document.getElementById('modal-overlay')) closeModal(); }
 
   function switchModalTab(name, tab) {
     document.querySelectorAll('.modal-tab').forEach(t => t.classList.remove('active'));
@@ -609,16 +594,30 @@
     const a = document.getElementById('m-arrivee').value;
     const d = document.getElementById('m-depart').value;
     const net = document.getElementById('m-nettoyage').checked;
+    const tarifPersoStr = document.getElementById('m-tarif-perso').value.trim();
+    const tarifPerso = tarifPersoStr !== '' ? parseFloat(tarifPersoStr) : null;
+
     if (a && d && d > a) {
-      const { total, details } = calculerTotal(a, d);
-      const totalNet = total + (net ? tarifs.nettoyage : 0);
-      document.getElementById('m-s-tarif').textContent = total + ' €';
+      const nuits = Math.round((new Date(d) - new Date(a)) / 86400000);
+      const { total: totalSaison, details } = calculerTotal(a, d, null);
+      const tarifSaisonLabel = details.haute > 0 && details.basse > 0
+        ? tarifs.basse + '–' + tarifs.haute + ' €/nuit (mixte)'
+        : (details.haute > 0 ? tarifs.haute : tarifs.basse) + ' €/nuit';
+      document.getElementById('m-s-tarif-saison').textContent = tarifSaisonLabel;
+      document.getElementById('m-s-nuits').textContent = nuits + ' nuit' + (nuits > 1 ? 's' : '');
       document.getElementById('m-s-net').textContent = net ? tarifs.nettoyage + ' €' : 'Non inclus';
-      document.getElementById('m-s-total').textContent = totalNet + ' €';
+      document.getElementById('m-s-total').textContent = (totalSaison + (net ? tarifs.nettoyage : 0)) + ' €';
+
+      if (tarifPerso !== null && !isNaN(tarifPerso)) {
+        const totalPerso = (tarifPerso * nuits) + (net ? tarifs.nettoyage : 0);
+        document.getElementById('m-perso-result').style.display = 'flex';
+        document.getElementById('m-perso-total').textContent = totalPerso + ' €';
+      } else {
+        document.getElementById('m-perso-result').style.display = 'none';
+      }
     } else {
-      document.getElementById('m-s-tarif').textContent = '—';
-      document.getElementById('m-s-net').textContent = '—';
-      document.getElementById('m-s-total').textContent = '—';
+      ['m-s-tarif-saison','m-s-nuits','m-s-net','m-s-total'].forEach(id => document.getElementById(id).textContent = '—');
+      document.getElementById('m-perso-result').style.display = 'none';
     }
   }
 
@@ -629,10 +628,10 @@
     if (!arrivee || !depart || depart <= arrivee) { showToast('Dates invalides'); return; }
     const nuits = Math.round((new Date(depart) - new Date(arrivee)) / 86400000);
     const nettoyage = document.getElementById('m-nettoyage').checked;
-    const { total, details } = calculerTotal(arrivee, depart);
-    const totalCalc = total + (nettoyage ? tarifs.nettoyage : 0);
-    const prixPersoStr = document.getElementById('m-prix-perso').value.trim();
-    const totalPerso = prixPersoStr !== '' ? parseInt(prixPersoStr) : null;
+    const tarifPersoStr = document.getElementById('m-tarif-perso').value.trim();
+    const tarifPersoNuit = tarifPersoStr !== '' ? parseFloat(tarifPersoStr) : null;
+    const { total, details } = calculerTotal(arrivee, depart, tarifPersoNuit);
+    const totalFinal = total + (nettoyage ? tarifs.nettoyage : 0);
 
     reservations[currentResaIdx] = {
       ...r,
@@ -642,8 +641,8 @@
       tel: document.getElementById('m-tel').value.trim(),
       arrivee, depart, nuits, nettoyage,
       personnes: document.getElementById('m-personnes').value,
-      total: totalCalc,
-      totalPerso,
+      total: totalFinal,
+      tarifPersoNuit,
       haute: details.haute > 0,
     };
     save();
@@ -651,7 +650,6 @@
     closeModal();
   }
 
-  // SUPPRESSION
   function confirmerSuppression() {
     const r = reservations[currentResaIdx];
     document.getElementById('confirm-msg').textContent = 'Supprimer la réservation de ' + r.prenom + ' ' + r.nom + ' ?';
@@ -660,13 +658,10 @@
   function closeConfirm() { document.getElementById('confirm-overlay').classList.remove('show'); }
   function supprimerResa() {
     reservations.splice(currentResaIdx, 1);
-    save();
-    closeConfirm();
-    closeModal();
+    save(); closeConfirm(); closeModal();
     showToast('Réservation supprimée');
   }
 
-  // CALENDRIER
   function getDateStatus(dateStr) {
     let start = false, end = false, mid = false;
     for (const r of reservations) {
@@ -702,8 +697,7 @@
     if (!monthResas.length) { el.innerHTML = '<div class="cal-no-resa">Aucune réservation ce mois-ci</div>'; return; }
     el.innerHTML = monthResas.map(r => {
       const idx = reservations.indexOf(r);
-      const prix = r.totalPerso !== null && r.totalPerso !== undefined ? r.totalPerso : r.total;
-      return '<div class="cal-resa-card" onclick="openModal(' + idx + ')"><div class="cal-dot"></div><div class="cal-resa-info"><div class="cal-resa-name">' + r.prenom + ' ' + r.nom + '</div><div class="cal-resa-date">' + fmt(r.arrivee) + ' → ' + fmt(r.depart) + ' · ' + r.nuits + ' nuit' + (r.nuits > 1 ? 's' : '') + '</div></div><div class="cal-resa-price">' + prix + ' €</div></div>';
+      return '<div class="cal-resa-card" onclick="openModal(' + idx + ')"><div class="cal-dot"></div><div class="cal-resa-info"><div class="cal-resa-name">' + r.prenom + ' ' + r.nom + '</div><div class="cal-resa-date">' + fmt(r.arrivee) + ' → ' + fmt(r.depart) + ' · ' + r.nuits + ' nuit' + (r.nuits > 1 ? 's' : '') + '</div></div><div class="cal-resa-price">' + r.total + ' €</div></div>';
     }).join('');
   }
 
@@ -714,7 +708,6 @@
     renderCalendar();
   }
 
-  // TARIFS
   function renderMonthsGrid() {
     document.getElementById('months-grid').innerHTML = MONTHS_SHORT.map((m, i) => {
       const isH = hautesMois.includes(i);
@@ -726,8 +719,7 @@
     const pos = hautesMois.indexOf(idx);
     if (pos >= 0) hautesMois.splice(pos, 1); else hautesMois.push(idx);
     localStorage.setItem('hautesMois', JSON.stringify(hautesMois));
-    renderMonthsGrid();
-    showToast('Saisons mises à jour');
+    renderMonthsGrid(); showToast('Saisons mises à jour');
   }
 
   function saveTarifs() {
@@ -737,8 +729,8 @@
       nettoyage: parseInt(document.getElementById('tarif-nettoyage').value) || 0
     };
     localStorage.setItem('tarifs', JSON.stringify(tarifs));
-    calculer();
-    showToast('Tarifs enregistrés ✓');
+    document.getElementById('nettoyage-price').textContent = '+ ' + tarifs.nettoyage + ' €';
+    calculer(); showToast('Tarifs enregistrés ✓');
   }
 
   function showToast(msg) {
